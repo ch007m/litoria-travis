@@ -29,8 +29,7 @@
     "yamljs": "^0.2.8"
   },
   "scripts": {
-    "test": "tape test/*.js",
-    "ci-publish": "ci-publish"
+    "test": "tape test/*.js"
   },
   "bin": {
     "litoria": "bin/litoria.js"
