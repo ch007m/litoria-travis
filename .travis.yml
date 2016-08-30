@@ -16,8 +16,8 @@ before_script:
   - cd $GIT_STYLES_DIR
   - mkdir -p $GIT_STYLES_DIR/stylesheets/foundation
   - compass compile
-  - mkdir -p $TRAVIS_BUILD_DIR/assets/css
-  - cp -R $GIT_STYLES_DIR/stylesheets $TRAVIS_BUILD_DIR/assets/css
+  - mkdir -p $TRAVIS_BUILD_DIR/litoria/assets/css
+  - mv -R $GIT_STYLES_DIR/stylesheets/* $TRAVIS_BUILD_DIR/litoria/assets/css/
 script:
   - cd $TRAVIS_BUILD_DIR/litoria && make
 after_success:
@@ -27,7 +27,6 @@ after_success:
   - git config user.email "{GH_USER_EMAIL}"
   - cd $TRAVIS_BUILD_DIR/litoria
   - rm -rf node_modules/
-  - cp -R ../assets/css assets/css
   - ls -la .
   - git checkout -b release
   - git add . ; git commit -m "Deploy the release branch"
