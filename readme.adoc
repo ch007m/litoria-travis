@@ -17,3 +17,9 @@ NOTE: The password will be required
      .travis.yml file created!
      cmoulliard/litoria-travis: enabled :)
 
+
+.Reference
+
+* How To setup Travis usign the https://gist.github.com/vinceallenvince/a7611b10f84e61eebdcc[Travis Ruby client]
+* Explore http://blog.tgrrtt.com/exploring-the-travisci-configuration-file[Travis config file]
+
