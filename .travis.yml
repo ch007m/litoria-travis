@@ -6,7 +6,7 @@ node_js:
 env:
   global:
   - GIT_ASCIIDOCTOR_STYLESHEET: "https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git"
-  - GIT_STYLES_DIR:  "/asciidoctor-styles"
+  - GIT_STYLES_DIR:  "$TRAVIS_BUILD_DIR/asciidoctor-styles"
 before_script:
   - echo "Git clone the Asciidoctor Stylesheet Factory project and compile the css files using ruby compass"
   - git clone $GIT_ASCIIDOCTOR_STYLESHEET $GIT_STYLES_DIR
