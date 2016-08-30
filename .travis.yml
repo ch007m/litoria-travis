@@ -22,12 +22,20 @@ script:
   - cd $TRAVIS_BUILD_DIR/litoria && make
 after_success:
   - cd $TRAVIS_BUILD_DIR/assets/
-  - git init
+#  - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
   - git add . ; git commit -m "Deploy to Releases branch the assets"
 #  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:releases > /dev/null 2>&1
   - git push --quiet "https://${GH_TOKEN}@${GH_REF}" --set-upstream origin release
+deploy:
+  provider: npm
+  email: cmoulliard@redhat.com
+  api_key:
+    secure: F9nLWmMAbojUlgN6Pb3c30gs89tX9FufEo/EMKOAfZ+CE+3DQUOIq6M5sNpgmFclmgO1GwJ92e5xSHaaWIpgsGcmw/a/FYpx+IY6HCltxjKBjcX8FlNLT733GQ7LBN7QNFnlEuOX1IakRlI5AGrpG+jzvtFZ4+VKgqT4W0ZV8Ek6dGBW8vAW6E9PAwUYHw483wzSl0AbrsX3onLn+ZQawVw0Rnp7Nn+yjN6U5PT0raoxHHvIuzwK1+V49Hg3UjsoAcHS7BbB1XPf1RbcFMPnNIao3nlefvUmo8zl25dYq9K3R6c9LjFJDUohbh/jZgaDh4NPEeMYX7iXa4fEMmHC2Bs5P1CZA+c8UWDiN5IfItW/KilXM2RsEcyPkb01/VzNCmd42e6R0I7rDIT/hWcgJFGHpzHU3FaqN6l6Rm+HwtTSWE25lpmX19CpxgUuVxCMnCaVYWSqo5j7CI6s8rg5xdYhPlLVCQhAN5fNsoqg0DPybOI3p63crszkoYO7uk0SJYTrVbqOOKh/BKfPqTX+IGW+M5r+n3geXzjfs39xE0hWThSAuX16wPgYMfNnYVgurabnX2CypAXhxazIB9DQyRbaMPvz6rtEV5+8ek8/Ow0QMenJGReSBi7ybCSZBM1g+BSeJhDcgaeZW9afV7DNjoCrFEBc4zLKHvVqhgi2nj4=
+  on:
+    repo: cmoulliard/litoria-travis
+    branch: release
 notifications:
   email:
     recipients:
