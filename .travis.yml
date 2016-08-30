@@ -26,7 +26,7 @@ after_success:
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
   - git checkout -b release
-  - rm .travis.yml; rm litoria/node_modules
+  - rm .travis.yml; rm -r litoria/node_modules
   - cp -R litoria/ .
   - git add . ; git commit -m "Deploy the release branch"
   - git branch -u origin/release
