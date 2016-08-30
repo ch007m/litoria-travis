@@ -7,7 +7,6 @@ env:
   global:
   - GIT_REPO_ASCIIDOCTOR_STYLESHEET: "https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git"
   - GIT_STYLES_DIR:  "$TRAVIS_BUILD_DIR/asciidoctor-styles"
-  - NPM_TOKEN: "1161d015-65e4-4240-a37d-41fdc29e7195"
 before_install:
   - "npm install -g npm@latest"
 install:
@@ -28,11 +27,13 @@ after_success:
   - git config user.email "{GH_USER_EMAIL}"
   - cd $TRAVIS_BUILD_DIR/litoria
   - echo "node_modules/" > .gitignore
+  - echo "Increment version of the module"
   - npm version patch
   - ls -la .
+  - echo "Commit and push the branch release"
   - git add . ; git commit -m "Deploy the release branch"
   - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:release > /dev/null 2>&1
-  - echo "Publish to npmjs.org repo"
+  - echo "Publish the module to npmjs.org repo"
   - $(npm bin)/ci-publish || true
 #deploy:
 #  provider: npm
