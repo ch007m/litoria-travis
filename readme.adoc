@@ -1,5 +1,7 @@
 = Instructions
 
+image:https://travis-ci.org/cmoulliard/litoria-travis.svg?branch=master["Build Status", link="https://travis-ci.org/cmoulliard/litoria-travis"]
+
 Instructions followed to setup a new travis project :
 
 * Log on
