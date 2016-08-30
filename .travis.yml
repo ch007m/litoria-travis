@@ -26,11 +26,11 @@ after_success:
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
   - git checkout -b release
-  - rm .travis.yml
+  - rm .travis.yml; rm litoria/node_modules
   - cp -R litoria/ .
   - git add . ; git commit -m "Deploy the release branch"
-# - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:releases > /dev/null 2>&1
-  - git push --quiet "https://${GH_TOKEN}@${GH_REF}" --set-upstream origin release
+  - git branch -u origin/release
+  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:release > /dev/null 2>&1
 deploy:
   provider: npm
   email: cmoulliard@redhat.com
