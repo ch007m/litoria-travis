@@ -1,6 +1,15 @@
-language: ruby
-rvm:
-- 2.0.0
-- 1.9.3
-- jruby-19mode
-- rbx-2
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - "5"
+env:
+  global:
+  - GIT_ASCIIDOCTOR_STYLESHEET: "https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git"
+  - GIT_STYLES_DIR:  "/asciidoctor-styles"
+before_script:
+  - echo "Git clone the Asciidoctor Stylesheet Factory project and compile the css files using ruby compass"
+  - git clone $GIT_ASCIIDOCTOR_STYLESHEET $GIT_STYLES_DIR
+  - cd $GIT_STYLES_DIR
+  - compass compile
+  - ls -la $GIT_STYLES_DIR/stylesheets

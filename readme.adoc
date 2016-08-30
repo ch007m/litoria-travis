@@ -20,6 +20,6 @@ NOTE: The password will be required
 
 .Reference
 
-* How To setup Travis usign the https://gist.github.com/vinceallenvince/a7611b10f84e61eebdcc[Travis Ruby client]
+* How To setup Travis using the https://gist.github.com/vinceallenvince/a7611b10f84e61eebdcc[Travis Ruby client]
 * Explore http://blog.tgrrtt.com/exploring-the-travisci-configuration-file[Travis config file]
 
