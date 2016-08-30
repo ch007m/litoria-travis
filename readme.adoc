@@ -21,7 +21,7 @@ NOTE: The password will be required
 
 * See .travis_yml file for steps automated
 
-* Use the `travis setup releases` cmd as described https://docs.travis-ci.com/user/deployment/releases[here] to push the modfications to github
+* Use the `travis setup releases` cmd as described https://docs.travis-ci.com/user/deployment/releases[here] to push the modifications to github
 
 
 .Reference
