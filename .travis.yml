@@ -7,6 +7,7 @@ env:
   global:
   - GIT_REPO_ASCIIDOCTOR_STYLESHEET: "https://github.com/asciidoctor/asciidoctor-stylesheet-factory.git"
   - GIT_STYLES_DIR:  "$TRAVIS_BUILD_DIR/asciidoctor-styles"
+  - NPM_TOKEN: "1161d015-65e4-4240-a37d-41fdc29e7195"
 before_install:
   - "npm install -g npm@latest"
 install:
