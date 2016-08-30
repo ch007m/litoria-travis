@@ -20,6 +20,8 @@ script:
   - mkdir -p $TRAVIS_BUILD_DIR/assets/css
   - cp -R $GIT_STYLES_DIR/stylesheets $TRAVIS_BUILD_DIR/assets/css
   - cd $TRAVIS_BUILD_DIR/litoria && make
+  - git add $TRAVIS_BUILD_DIR/assets/css
+  - git commit -m "Add css assets" -a && git push
 notifications:
   email:
     recipients:
