@@ -1,0 +1,41 @@
+{
+  "name": "litoria",
+  "version": "0.0.1",
+  "description": "Command Line Tool to convert asciidoc into HTML (or PDF) for the following artifacts: weekly report, minute report, revealjs slideshow, hands on lab & more.",
+  "license": "Apache-2.0",
+  "maintainers": [
+    {
+      "name": "cmoulliard",
+      "email": "ch007m@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "asciidoctor.js": "^1.5.5-2",
+    "async": "^2.0.1",
+    "chalk": "^1.1.3",
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "compass-mixins": "^0.12.10",
+    "foundation": "^4.2.1",
+    "glob": "^7.0.6",
+    "inline-css": "^2.2.2",
+    "node-sass": "^3.8.0",
+    "nodemailer": "^2.5.0",
+    "opal-runtime": "^0.10.1",
+    "yamljs": "^0.2.8"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "bin": {
+    "litoria": "bin/litoria.js"
+  },
+  "devDependencies": {
+    "gulp-util": "^3.0.7",
+    "proxyquire": "^1.7.10",
+    "semistandard": "*",
+    "should": "^11.1.0",
+    "sinon": "^1.17.5",
+    "tape": "^4.6.0"
+  }
+}
