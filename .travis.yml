@@ -19,7 +19,7 @@ before_script:
 script:
   - mkdir -p $TRAVIS_BUILD_DIR/assets/css
   - cp -R $GIT_STYLES_DIR/stylesheets $TRAVIS_BUILD_DIR/assets/css
-  - cd $TRAVIS_BUILD_DIR/litoria && make
+  - cd $TRAVIS_BUILD_DIR/litoria && make clean
 after_success:
 # - cd $TRAVIS_BUILD_DIR/assets/
 # - git init
@@ -27,7 +27,8 @@ after_success:
   - git config user.email "{GH_USER_EMAIL}"
   - git checkout -b release
   - rm .travis.yml
-  - rm -r litoria/node_modules
+  - ls -la .
+  - rm -rf litoria/node_modules/
   - cp -R litoria/ .
   - git add . ; git commit -m "Deploy the release branch"
 # - git branch -u origin/release
