@@ -1,3 +1,19 @@
-= Please readme
+= Instructions
 
-;-)
+Instructions followed to setup a new travis project :
+
+* Log on
+
+    travis login -u cmoulliard --org
+
+NOTE: The password will be required
+
+* Create / Init a project
+
+     travis init
+     repository not known to Travis CI (or no access?)
+     triggering sync: ..... done
+     Main programming language used: |Ruby|
+     .travis.yml file created!
+     cmoulliard/litoria-travis: enabled :)
+
