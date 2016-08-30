@@ -21,12 +21,15 @@ script:
   - cp -R $GIT_STYLES_DIR/stylesheets $TRAVIS_BUILD_DIR/assets/css
   - cd $TRAVIS_BUILD_DIR/litoria && make
 after_success:
-  - cd $TRAVIS_BUILD_DIR/assets/
-#  - git init
+# - cd $TRAVIS_BUILD_DIR/assets/
+# - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
-  - git add . ; git commit -m "Deploy to Releases branch the assets"
-#  - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:releases > /dev/null 2>&1
+  - git checkout -b release
+  - rm .travis.yml
+  - cp -R litoria/ .
+  - git add . ; git commit -m "Deploy the release branch"
+# - git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:releases > /dev/null 2>&1
   - git push --quiet "https://${GH_TOKEN}@${GH_REF}" --set-upstream origin release
 deploy:
   provider: npm
