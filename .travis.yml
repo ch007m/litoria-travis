@@ -19,7 +19,7 @@ before_script:
 script:
   - mkdir -p $TRAVIS_BUILD_DIR/assets/css
   - cp -R $GIT_STYLES_DIR/stylesheets $TRAVIS_BUILD_DIR/assets/css
-  - cd TRAVIS_BUILD_DIR/litoria && make
+  - cd $TRAVIS_BUILD_DIR/litoria && make
 notifications:
   email:
     recipients:
