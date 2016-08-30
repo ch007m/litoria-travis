@@ -17,7 +17,8 @@ before_script:
   - compass compile
   - ls -la $GIT_STYLES_DIR/stylesheets
 script:
-  - cd litoria && make
+  - cp $GIT_STYLES_DIR/stylesheets $TRAVIS_BUILD_DIR/assets/css
+  - cd $TRAVIS_BUILD_DIR/litoria && make
 notifications:
   email:
     recipients:
