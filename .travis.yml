@@ -14,10 +14,9 @@ before_script:
   - echo "Git clone the Asciidoctor Stylesheet Factory project and compile the css files using ruby compass"
   - git clone $GIT_REPO_ASCIIDOCTOR_STYLESHEET $GIT_STYLES_DIR
   - cd $GIT_STYLES_DIR
-  - mkdir -p $GIT_STYLES_DIR/stylesheets/foundation
   - compass compile
   - mkdir -p $TRAVIS_BUILD_DIR/litoria/assets/css
-  - mv -R $GIT_STYLES_DIR/stylesheets/* $TRAVIS_BUILD_DIR/litoria/assets/css/
+  - mv $GIT_STYLES_DIR/stylesheets/* $TRAVIS_BUILD_DIR/litoria/assets/css
 script:
   - cd $TRAVIS_BUILD_DIR/litoria && make
 after_success:
